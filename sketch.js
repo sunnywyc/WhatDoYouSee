@@ -33,7 +33,6 @@ function setup() {
    for (let h = 0; h < ansNum; h++) {
   myAnswer[h] = new Answer((h+1)*(width-200)/5, random(height*0.6,height*0.9), color(227,189,88), h);
    }
-  
   textFont(font);
   textAlign(CENTER,CENTER);
 }
@@ -65,7 +64,16 @@ function draw() {
   push();
   textSize(36);
   fill(227,189,88);
-  text("Playful Digital Experiences + Cultural Heritage", width/2, height/2);
+  textWrap(WORD);
+  if(width<800){
+  text("Playful Digital Experiences + Cultural Heritage", width/2, height/2, 390);  
+  }
+  else if(width<1200){
+  text("Playful Digital Experiences + Cultural Heritage", width/2, height/2,810);
+  }
+  else{
+  text("Playful Digital Experiences + Cultural Heritage", width/2, height/2,1200);
+  }
   pop();
 }
 
