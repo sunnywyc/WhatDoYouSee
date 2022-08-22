@@ -80,7 +80,7 @@ class Spotlight {
   }
   
   move(){
-    if(mouseX>50 && mouseX<width-50 && mouseY>50 && mouseY<height-50){
+    if(mouseX>100 && mouseX<width-100 && mouseY>100 && mouseY<height-100){
       this.x = mouseX;
       this.y = mouseY;      
     }
