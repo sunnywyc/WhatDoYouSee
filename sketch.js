@@ -5,6 +5,11 @@ let text01 = "What do you see?";
 let text02 = "Playful Digital Experiences + Cultural Heritage"
 let text03 = ['Curiosity','Creativity','Engaging','Innovation','Sustainability'];
 
+function preload() {
+  font = loadFont("Inter-Black.ttf");
+}
+
+
 function setup() {
   createCanvas(windowWidth, 600);
   //initiating data for bubbbles in grid
@@ -28,14 +33,15 @@ function setup() {
    for (let h = 0; h < ansNum; h++) {
   myAnswer[h] = new Answer((h+1)*(width-200)/5, random(height*0.6,height*0.9), color(227,189,88), h);
    }
-
+  
+  textFont(font);
   textAlign(CENTER,CENTER);
-  textSize(24);
 }
 
 function draw() {
   background(255,255,255);
   push();
+  textSize(24);
   fill(227,189,88);
   text(text01, width/2, height*0.25);
   //random keywords display
@@ -57,8 +63,9 @@ function draw() {
     mySpotlight[0].erasor();//drawing spotlight
   }
   push();
+  textSize(36);
   fill(227,189,88);
-  text(text02, width/2, height/2);
+  text("Playful Digital Experiences + Cultural Heritage", width/2, height/2);
   pop();
 }
 
@@ -131,6 +138,7 @@ class Answer {
   
   display() {
     push();
+    strokeWeight(2);
     stroke(this.color);
     noFill();
     text(text03[this.num], this.x, this.y);
